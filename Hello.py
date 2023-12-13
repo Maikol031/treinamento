@@ -1,0 +1,1 @@
+print("maikol, me mama!")

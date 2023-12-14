@@ -1,1 +1,1 @@
-print("maikol, me mama!")
+print("maikol, n me mama")

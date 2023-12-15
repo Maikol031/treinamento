@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="weL COMEU QUEM?"/>
+  <HelloWorld msg="WEL N COMEU NINGUEM"/>
   <HelloMaikol/>
 </template>
 

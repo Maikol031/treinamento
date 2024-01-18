@@ -34,8 +34,6 @@ header {
 @media (min-width: 1024px) {
   header {
     display: flex;
-    align-items: start; /* Ajuste para o eixo transversal */
-    justify-content: start; /* Alinhar os elementos à esquerda */
     position: fixed; /* Fixar o cabeçalho no topo da página */
     width: 100%;
     top: 0;

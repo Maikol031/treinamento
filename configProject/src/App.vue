@@ -1,84 +1,52 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
+ 
+
+   
   <header>
+    
+      
+      <RouterLink class="text-white !font-bold hover:text-white pr-2 pl-2" to="/">Vendas & Recebimentos</RouterLink>
+      <RouterLink class="text-white !font-bold hover:text-white pr-2 pl-2" to="/about">Consultas</RouterLink>
 
 
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/cadastro">Cadastro</RouterLink>
-      </nav>
-    </div>
+
+    
   </header>
-
-  <RouterView />
+  
+  <RouterView class="mt-5"/>
 </template>
 
 <style scoped>
+  @import 'assets/main.css';
+  @import './assets/consultas/tableFinds.css';
+
 header {
-  line-height: 1.5;
+  line-height: 5;
   max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
+  background-color: rgb(233, 31, 169);
 }
 
 @media (min-width: 1024px) {
   header {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    position: fixed; /* Fixar o cabeçalho no topo da página */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Certifique-se de que o cabeçalho esteja acima de outros elementos */
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  .estilos {
+    text-decoration-color: chocolate;
+
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
 
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
 }
 </style>

@@ -1,0 +1,20 @@
+
+.param-sales--table .table-title--element.--principal-table:nth-child(1), .table-data--element.--principal-table:nth-child(1) {
+    @apply xl:flex-[1_1_1%] xl:text-left xl:pl-2;
+  }
+  
+  .param-sales--table .table-title--element.--principal-table:nth-child(2), .table-data--element.--principal-table:nth-child(2) {
+    @apply xl:flex-[1_1_25%] xl:text-left xl:pl-2;
+  }
+  
+  .param-sales--table .table-title--element.--principal-table:nth-child(3), .table-data--element.--principal-table:nth-child(3) {
+    @apply xl:flex-[1_1_30%] xl:text-left xl:pl-2;
+  }
+  .param-sales--table .table-title--element.--principal-table:nth-child(4), .table-data--element.--principal-table:nth-child(4) {
+    @apply xl:flex-[1_1_10%] xl:text-left xl:pl-2;
+  }
+  
+  .param-sales--table .table-title--element.--principal-table:nth-child(5), .table-data--element.--principal-table:nth-child(5) {
+    @apply xl:flex-[1_1_5%] xl:pr-2;
+  }
+

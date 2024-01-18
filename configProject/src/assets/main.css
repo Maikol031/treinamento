@@ -7,13 +7,8 @@
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
+
+
 
 @media (hover: hover) {
   a:hover {
@@ -28,8 +23,16 @@ a,
   }
 
   #app {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
+}
+
+.table-title--element {
+  @apply truncate before:float-left before:text-left before:mr-6 font-medium text-gray-800 tracking-tighter text-sm;
+}
+
+
+.table-data--element {
+  @apply truncate leading-8 xl:leading-6 before:content-[attr(data-header)] before:xl:content-none before:font-bold before:text-gray-700 before:float-left before:text-left before:mr-6 text-right xl:text-left justify-between md:text-gray-500 font-light tracking-tighter text-gray-500 text-sm group-hover:text-black flex-[1_1_100%];
 }

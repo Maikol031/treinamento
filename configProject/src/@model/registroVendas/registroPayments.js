@@ -5,7 +5,7 @@ export class registroPayments{
         this.bandeiras = {id: bandeiras},
         this.tipo = {id: tipo},
         this.parcelas = parcelas,
-        this.valorbr = Number(valorbr)
+        this.valorbr = valorbr
 
     }
 

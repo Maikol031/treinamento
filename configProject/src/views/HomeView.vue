@@ -8,7 +8,7 @@
     <div class="bg-pink-500 border-x-2 border-gray-500">
         <div class="table-container-cards font-styles pl-24">
     <label  for="Master-Card" class="px-2 rounded-md w-fit" v-for="cards in arrayCads">
-        <input type="radio" v-model="registroModel.bandeiras.id" :disabled="radioPayMethod"  name="paymentMethod" :value="cards.id" class="mr-2">{{cards.name}}
+        <input type="radio" v-model="registroModel.bandeiras.id" :disabled="radioPayMethod" :checked="!radioPayMethod"  name="paymentMethod" :value="cards.id" class="mr-2">{{cards.name}}
     </label>
 
 </div>
@@ -25,7 +25,7 @@
         <div class="table-container font-styles !text-gray-600 flex justify-center ">
             <label for="numberVezes" class="w-fit !text-xs !font-bold">NºParcelas</label>
             <input type="number" min="1" v-model="registroModel.parcelas" max="12" class="w-20 border-2 border-gray-400">
-            <input type="number" class="border-2 border-gray-400 w-20" v-model="registroModel.valorbr" placeholder="R$">
+            <input type="number" class="border-2 input-number border-gray-400 w-20" v-model="registroModel.valorbr" placeholder="R$">
         </div>
         <div class="flex justify-center pt-2">
             <button  class=" bg-pink-500 px-3 py-2 font-bold !text-white hover:bg-pink-600  rounded-md shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 " :disabled="disabledButton" @click="addList()">Enviar</button>
@@ -51,7 +51,7 @@ const typeSale = ref([{name: 'Vendas', id: 1}, {name: 'Recebimentos', id: 2}])
 
 
 const funcRadio = (id) =>{
-    console.log(radioPayMethod.value)
+
     if(id == 3){ radioPayMethod.value = true;
     }else{
         radioPayMethod.value = false;
@@ -61,13 +61,16 @@ const funcRadio = (id) =>{
 
 
 const addList = async() => {
-
+    if(registroModel.bandeiras = undefined) {
+   
+        registroModel.bandeiras = null}
     try {
        await axios({
             url:`http://localhost:8080/operacoes`,
             method: 'POST',
             headers:{"Content-Type": "application/json"},
-            data: registroModel})
+            data: registroModel
+        })
     
 
     } catch (error) {
@@ -101,6 +104,10 @@ onMounted(() => {
   grid-template-columns: 65px 100px 70px;
   margin: 0%;
 
+}
+
+.input-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 .table-container-type-payment {

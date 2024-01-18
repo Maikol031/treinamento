@@ -10,8 +10,8 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     
       
-      <RouterLink class="text-white font-bold hover:text-white pr-2 pl-2" to="/">Vendas & Recebimentos</RouterLink>
-      <RouterLink class="text-white font-bold hover:text-white pr-2 pl-2" to="/about">Consultas</RouterLink>
+      <RouterLink class="text-white !font-bold hover:text-white pr-2 pl-2" to="/">Vendas & Recebimentos</RouterLink>
+      <RouterLink class="text-white !font-bold hover:text-white pr-2 pl-2" to="/about">Consultas</RouterLink>
 
 
 

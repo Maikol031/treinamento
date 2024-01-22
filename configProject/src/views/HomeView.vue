@@ -8,7 +8,7 @@
     <div class="bg-pink-500 border-x-2 border-gray-500">
         <div class="table-container-cards font-styles pl-24">
     <label  for="Master-Card" class="px-2 rounded-md w-fit" v-for="cards in arrayCads">
-        <input type="radio" v-model="registroModel.bandeiras.id" :disabled="radioPayMethod" :checked="!radioPayMethod"  name="paymentMethod" :value="cards.id" class="mr-2">{{cards.name}}
+        <input type="radio" v-model="registroModel.bandeiras.id" :disabled="radioPayMethod"  name="paymentMethod" :value="cards.id" class="mr-2">{{cards.name}}
     </label>
 
 </div>
@@ -46,7 +46,7 @@ const disabledButton = ref(true)
 const registroModel = reactive(new registroPayments())
 
 const array = ref([{name: 'Débito', id: 1}, {name: 'Crédito', id: 2}, {name: 'Pix', id: 3}])
-const arrayCads = ref([{name: 'Master-Card', id: 1}, {name: 'Visa', id: 2}, {name: 'ELO', id: 3}, {name: 'HiperCard', id: 4}])
+const arrayCads = ref([{name: 'Master-Card', id: 1}, {name: 'Visa', id: 2}, {name: 'ELO', id: 3}, {name: 'HiperCard', id: 4},])
 const typeSale = ref([{name: 'Vendas', id: 1}, {name: 'Recebimentos', id: 2}])
 
 
@@ -61,9 +61,7 @@ const funcRadio = (id) =>{
 
 
 const addList = async() => {
-    if(registroModel.bandeiras = undefined) {
-   
-        registroModel.bandeiras = null}
+
     try {
        await axios({
             url:`http://localhost:8080/operacoes`,
@@ -73,11 +71,12 @@ const addList = async() => {
         })
     
 
+        alert('inserido com sucesso')
     } catch (error) {
         console.error(error)
+        alert('Erro ao inserir: Verifique se está inserindo bandeira')
     }finally{
-        alert('inserido com sucesso')
-
+        
     }
 
 
